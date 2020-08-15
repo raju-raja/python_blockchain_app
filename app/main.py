@@ -38,14 +38,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'hello world'
-    # fetch_posts()
-    # return render_template('index.html',
-    #                        title='YourNet: Decentralized '
-    #                              'content sharing',
-    #                        posts=posts,
-    #                        node_address=CONNECTED_NODE_ADDRESS,
-    #                        readable_time=timestamp_to_string)
+    # return 'hello world'
+    fetch_posts()
+    return render_template('index.html',
+                           title='YourNet: Decentralized '
+                                 'content sharing',
+                           posts=posts,
+                           node_address=CONNECTED_NODE_ADDRESS,
+                           readable_time=timestamp_to_string)
 
 
 @app.route('/submit', methods=['POST'])
